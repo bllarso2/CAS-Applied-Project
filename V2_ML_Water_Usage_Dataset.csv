@@ -1,0 +1,26 @@
+Feature,Type,Formula / Logic,Why It Matters
+Investment_Efficiency,Engineered,Investment_Level ÷ Reclamation_Tech_Level,Measures how much you're spending per tech unit
+Water_Stress_Index,Engineered,Wafer_Size _ Percent_Municipal_Water,Higher values = more pressure on external water
+Composite_Risk_Score,Engineered,"Weighted sum of size, tech, reclaimed %",Proxy for overall water-related risk
+Year_Squared,Engineered,Year^2,Adds curve to long-term trends (non-linear growth)
+Synthetic_Water_per_Wafer,Target,Simulated baseline water use,What we’re trying to predict
+Synthetic_Water_per_Wafer_noisy,Target,Adds random variation to simulate real world,Adds realism for ML modeling
+Defect_Risk_Score,Target,Logic-based simulation (0–1),Measures quality impact of poor water strategy
+,,,
+,,,
+,,,
+,,,
+,,,
+ML Model - Random Forrest Regression,,,
+Reason,Benefit,,
+Handles non-linear relationships,Works great with your feature mix,,
+Works with small & medium data,You don’t need millions of rows,,
+Robust to noise,Your “noisy” water target is handled well,,
+Easy to interpret,You can pull feature importance to explain predictions,,
+,,,
+,,,
+,,,
+Model,Status,Description,
+Water Use Prediction,ML trained per wafer step,Predicts water per wafer based on investment & tech,
+Defect Risk Model,Simulated + ML,Predicts quality risk based on sustainability decisions,
+ ROI Model,Rules-based,Calculates financial payoff based on water & defect models,
